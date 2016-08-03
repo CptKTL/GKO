@@ -104,6 +104,10 @@
       <Project>{52E25FD9-2F5C-4670-9340-8BDEDD2988EB}</Project>
       <Name>NumberTextBox</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PaceLabel\PaceLabel.csproj">
+      <Project>{875635EB-F1EC-4584-B25C-CEA453B94FDB}</Project>
+      <Name>PaceLabel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeTextBox\TimeTextBox.csproj">
       <Project>{6555EA0A-4B30-410C-994D-3EC6A039B732}</Project>
       <Name>TimeTextBox</Name>

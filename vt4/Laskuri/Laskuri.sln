@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treenilaskuri", "Treenilask
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberTextBox", "NumberTextBox\NumberTextBox.csproj", "{52E25FD9-2F5C-4670-9340-8BDEDD2988EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaceLabel", "PaceLabel\PaceLabel.csproj", "{875635EB-F1EC-4584-B25C-CEA453B94FDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{52E25FD9-2F5C-4670-9340-8BDEDD2988EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52E25FD9-2F5C-4670-9340-8BDEDD2988EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52E25FD9-2F5C-4670-9340-8BDEDD2988EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875635EB-F1EC-4584-B25C-CEA453B94FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875635EB-F1EC-4584-B25C-CEA453B94FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875635EB-F1EC-4584-B25C-CEA453B94FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875635EB-F1EC-4584-B25C-CEA453B94FDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

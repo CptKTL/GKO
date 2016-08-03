@@ -23,7 +23,7 @@
                 <KilometriNopeusLaskuri:kilometriNopeusLaskuri/>
             </StackPanel>
             <StackPanel>
-                <Treenilaskuri:UserControl1/>
+                <Treenilaskuri:treenilaskuri/>
             </StackPanel>
         </StackPanel>
 
