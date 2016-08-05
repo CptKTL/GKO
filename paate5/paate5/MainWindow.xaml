@@ -22,7 +22,9 @@
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
+             
             </Setter>
+          
         </Style>
     </Window.Resources>
     <DockPanel>

@@ -10,41 +10,110 @@
         <Style x:Key="AakkosetPerus" TargetType="CheckBox">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type CheckBox}">
-                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                    <ControlTemplate x:Name="CheckBoxTemplaatti" TargetType="{x:Type CheckBox}">
+                        
+                        <Grid x:Name="asdf" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
                             <Rectangle Fill="{TemplateBinding Background}" />
-                            <Rectangle Margin="5,5,5,5" StrokeThickness="5" Stroke="Brown" />
-                            
+                            <Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="5" Stroke="Brown" />
+
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentSource="{TemplateBinding Name}">
-                                
+
                             </ContentPresenter>
                             <Rectangle Stroke="Black" />
                         </Grid>
-                        
+
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate x:Name="CheckBoxTemplaattiMouseOver" TargetType="{x:Type CheckBox}">
+
+                                <Grid x:Name="asdf" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Rectangle Fill="{TemplateBinding Background}" />
+                                    <!--<Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="5" Stroke="Brown" />-->
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentSource="{TemplateBinding Name}">
+
+                                    </ContentPresenter>
+                                    <Rectangle Stroke="Black" />
+                                </Grid>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="true">
+
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate x:Name="CheckBoxTemplaattiEnabled" TargetType="{x:Type CheckBox}">
+
+                                <Grid x:Name="asdf" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Rectangle Fill="{TemplateBinding Background}" />
+                                    <Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="2" Stroke="Black" />
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentSource="{TemplateBinding Name}">
+
+                                    </ContentPresenter>
+                                    <Rectangle Stroke="Black" />
+                                </Grid>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+            
         </Style>
+
         <Style x:Key ="CheckBoxTyyli" BasedOn="{StaticResource AakkosetPerus}" TargetType="CheckBox">
             <Setter Property="Background" Value="Moccasin"></Setter>
             <Setter Property="BorderBrush" Value="Brown" />
             <Setter Property="FontSize"  Value="33"/>
-            <Setter Property="FontStretch" Value="Expanded"/>
-
+            <Setter Property="FontSize"  Value="30"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
-        
+        <DataTemplate DataType="{x:Type local:Henkilo}">
+            <Border BorderThickness="5" BorderBrush="{Binding }"
+        </DataTemplate>
     </Window.Resources>
     <DockPanel>
         <ListView DockPanel.Dock="Left">
 
         </ListView>
         <UniformGrid >
-            
+
             <UniformGrid.Resources>
                 <Style BasedOn="{StaticResource CheckBoxTyyli}" TargetType="CheckBox"></Style>
             </UniformGrid.Resources>
-                
-           
+
+
             <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
