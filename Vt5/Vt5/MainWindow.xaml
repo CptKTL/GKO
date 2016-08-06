@@ -31,21 +31,16 @@
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="true">
-
-                    <Setter Property="FontWeight" Value="Bold"/>
+                
+                <Trigger Property="IsChecked" Value="true">
                     <Setter Property="Template">
                         <Setter.Value>
-                            <ControlTemplate x:Name="CheckBoxTemplaattiMouseOver" TargetType="{x:Type CheckBox}">
-
+                            <ControlTemplate x:Name="CheckBoxTemplaattiChecked" TargetType="{x:Type CheckBox}">
                                 <Grid x:Name="asdf" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup Name="CommonStates">
-
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
                                     <Rectangle Fill="{TemplateBinding Background}" />
-                                    <!--<Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="5" Stroke="Brown" />-->
+                                    <Rectangle Margin="0,0,0,0" StrokeThickness="5" Stroke="Gray" />
+
+                                    <Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="5" Stroke="White" />
 
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentSource="{TemplateBinding Name}">
 
@@ -57,21 +52,16 @@
                         </Setter.Value>
                     </Setter>
                 </Trigger>
-                <Trigger Property="IsChecked" Value="true">
+                <Trigger Property="IsMouseOver" Value="true">
 
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Template">
                         <Setter.Value>
-                            <ControlTemplate x:Name="CheckBoxTemplaattiEnabled" TargetType="{x:Type CheckBox}">
+                            <ControlTemplate x:Name="CheckBoxTemplaattiMouseOver" TargetType="{x:Type CheckBox}">
 
                                 <Grid x:Name="asdf" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup Name="CommonStates">
-
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
                                     <Rectangle Fill="{TemplateBinding Background}" />
-                                    <Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="2" Stroke="Black" />
+                                    <!--<Rectangle x:Name="Reunus" Margin="5,5,5,5" StrokeThickness="5" Stroke="Brown" />-->
 
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentSource="{TemplateBinding Name}">
 
@@ -99,9 +89,9 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <DataTemplate DataType="{x:Type local:Henkilo}">
+        <!--<DataTemplate DataType="{x:Type local:Henkilo}">
             <Border BorderThickness="5" BorderBrush="{Binding }"
-        </DataTemplate>
+        </DataTemplate>-->
     </Window.Resources>
     <DockPanel>
         <ListView DockPanel.Dock="Left">
