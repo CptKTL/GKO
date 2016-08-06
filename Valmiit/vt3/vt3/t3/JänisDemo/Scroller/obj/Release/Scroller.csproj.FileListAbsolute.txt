@@ -1,0 +1,7 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\bin\Release\Scroller.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\bin\Release\Scroller.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\obj\Release\Scroller.scroller.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\obj\Release\Scroller.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\obj\Release\Scroller.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\obj\Release\Scroller.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\Scroller\obj\Release\Scroller.csprojResolveAssemblyReference.cache

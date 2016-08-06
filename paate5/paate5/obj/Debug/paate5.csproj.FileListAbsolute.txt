@@ -1,0 +1,14 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\bin\Debug\paate5.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\bin\Debug\paate5.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\bin\Debug\paate5.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\MainWindow.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\App.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\MainWindow.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\paate5\paate5\obj\Debug\paate5.pdb

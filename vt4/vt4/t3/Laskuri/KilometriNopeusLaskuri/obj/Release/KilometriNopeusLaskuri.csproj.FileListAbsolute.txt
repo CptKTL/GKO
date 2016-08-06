@@ -1,0 +1,13 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\bin\Release\KilometriNopeusLaskuri.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\bin\Release\KilometriNopeusLaskuri.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\kilometriNopeuLaskuri.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\kilometriNopeuLaskuri.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\KilometriNopeusLaskuri\obj\Release\KilometriNopeusLaskuri.pdb

@@ -1,0 +1,15 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\TreeniLaskuri.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\TreeniLaskuri.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\TreeniLaskuri.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\NumberTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\PaceLabel.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\TimeTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\NumberTextBox.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\PaceLabel.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\bin\Release\TimeTextBox.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\obj\Release\TreeniLaskuri.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\obj\Release\TreeniLaskuri.Treenilaskuri.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\obj\Release\TreeniLaskuri.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\obj\Release\TreeniLaskuri.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\obj\Release\TreeniLaskuri.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TreeniLaskuri\obj\Release\TreeniLaskuri.pdb

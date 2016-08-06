@@ -1,0 +1,16 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\bin\Debug\Paate4.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\bin\Debug\Paate4.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\bin\Debug\Paate4.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\MainWindow.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\App.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\MainWindow.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\obj\Debug\Paate4.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\bin\Debug\Autolaskuri.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Paate4\bin\Debug\Autolaskuri.pdb

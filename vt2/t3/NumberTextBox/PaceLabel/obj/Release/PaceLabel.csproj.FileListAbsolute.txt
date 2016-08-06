@@ -1,0 +1,5 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\PaceLabel\bin\Release\PaceLabel.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\PaceLabel\bin\Release\PaceLabel.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\PaceLabel\obj\Release\PaceLabel.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\PaceLabel\obj\Release\PaceLabel.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\PaceLabel\obj\Release\PaceLabel.pdb

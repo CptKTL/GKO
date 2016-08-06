@@ -1,0 +1,12 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\bin\Debug\Autolaskuri.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\bin\Debug\Autolaskuri.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\autoLaskuri.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\autoLaskuri.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Paate4\Autolaskuri\obj\Debug\Autolaskuri.csprojResolveAssemblyReference.cache

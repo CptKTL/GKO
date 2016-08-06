@@ -1,0 +1,7 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\bin\Release\TimeTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\bin\Release\TimeTextBox.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\obj\Release\TimeTextBox.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\obj\Release\TimeTextBox.TimeTextBox.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\obj\Release\TimeTextBox.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\obj\Release\TimeTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\TimeTextBox\obj\Release\TimeTextBox.pdb

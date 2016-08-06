@@ -1,0 +1,7 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\bin\Debug\HorizontalBar.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\bin\Debug\HorizontalBar.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\obj\Debug\HorizontalBar.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\obj\Debug\HorizontalBar.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\obj\Debug\HorizontalBar.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\obj\Debug\HorizontalBar.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt3\JänisDemo\HorizontalBar\obj\Debug\HorizontalBar.horizontalBar.resources

@@ -1,0 +1,10 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\bin\Debug\vt1.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\bin\Debug\vt1.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\bin\Debug\vt1.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.Form1.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\vt1\vt1\obj\Debug\vt1.About.resources

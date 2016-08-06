@@ -1,0 +1,6 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\kayttoOhj1\kayttoOhj1\bin\Debug\kayttoOhj1.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\kayttoOhj1\kayttoOhj1\bin\Debug\kayttoOhj1.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\kayttoOhj1\kayttoOhj1\bin\Debug\kayttoOhj1.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\kayttoOhj1\kayttoOhj1\obj\Debug\kayttoOhj1.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\kayttoOhj1\kayttoOhj1\obj\Debug\kayttoOhj1.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\kayttoOhj1\kayttoOhj1\obj\Debug\kayttoOhj1.pdb

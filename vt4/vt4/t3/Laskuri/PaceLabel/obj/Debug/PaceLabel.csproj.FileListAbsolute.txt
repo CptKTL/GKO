@@ -1,0 +1,12 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\bin\Debug\PaceLabel.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\bin\Debug\PaceLabel.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\paceLabel.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\paceLabel.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\Laskuri\PaceLabel\obj\Debug\PaceLabel.pdb

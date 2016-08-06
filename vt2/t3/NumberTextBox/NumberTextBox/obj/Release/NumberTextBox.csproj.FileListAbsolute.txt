@@ -1,0 +1,6 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\NumberTextBox\bin\Release\NumberTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\NumberTextBox\bin\Release\NumberTextBox.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\NumberTextBox\obj\Release\NumberTextBox.NumberTextBox.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\NumberTextBox\obj\Release\NumberTextBox.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\NumberTextBox\obj\Release\NumberTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt2\NumberTextBox\NumberTextBox\obj\Release\NumberTextBox.pdb

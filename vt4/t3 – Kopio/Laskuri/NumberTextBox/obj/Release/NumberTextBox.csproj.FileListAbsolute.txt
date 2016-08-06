@@ -1,0 +1,12 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\bin\Release\NumberTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\bin\Release\NumberTextBox.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\numberTextBox.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\numberTextBox.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\NumberTextBox\obj\Release\NumberTextBox.pdb

@@ -1,0 +1,12 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\bin\Release\TimeTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\bin\Release\TimeTextBox.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\timeTextBox.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\timeTextBox.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\vt4\t3\Laskuri\TimeTextBox\obj\Release\TimeTextBox.pdb
