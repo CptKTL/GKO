@@ -1,0 +1,28 @@
+﻿<Window x:Class="Vt6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vt6"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" 
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        >
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="New_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    
+    <DockPanel>
+        <Menu IsMainMenu="True" DockPanel.Dock="Top">
+            <MenuItem Header="_File" >
+                <MenuItem Command="ApplicationCommands.New"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DockPanel LastChildFill="True" local:RaahausLabel.Raahaus="Dock_Raahaus" >
+            <DockPanel DockPanel.Dock="Top" Name="Vastausalue" AllowDrop="True" Drop="Label_Drop" Background="Moccasin" Height="50" ></DockPanel>
+            <Label Name="siirrotLabel" Background="Red" Content="{Binding Raahaukset}" DockPanel.Dock="Right"></Label>
+            <Canvas  Name="Lukualue" AllowDrop="True" Drop="Label_Drop" Background="Transparent"></Canvas>
+        </DockPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,15 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\bin\Debug\Vt6.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\bin\Debug\Vt6.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\bin\Debug\Vt6.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\MainWindow.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\App.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\MainWindow.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\GeneratedInternalTypeHelper.g.cs
