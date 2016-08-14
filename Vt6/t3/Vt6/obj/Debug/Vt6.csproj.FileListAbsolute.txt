@@ -12,4 +12,6 @@ D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.Propertie
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.csproj.GenerateResource.Cache
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.exe
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\Vt6.pdb
-D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\Vt6\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\t3\Vt6\bin\Debug\Vt6.exe.config
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\t3\Vt6\obj\Debug\Vt6.exe
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Vt6\t3\Vt6\obj\Debug\Vt6.pdb

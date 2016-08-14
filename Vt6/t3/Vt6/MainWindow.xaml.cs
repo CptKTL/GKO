@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Vt6
 {
@@ -21,10 +23,12 @@ namespace Vt6
     /// </summary>
     public partial class MainWindow : Window
     {
-        int lukuja = 2;
+        int lukuja = 3;
         int min = 1;
         int max = 10;
         int vastaus;
+        DispatcherTimer laskuTimer = new DispatcherTimer();
+        Stopwatch Timer = new Stopwatch();
 
         char[] operaattoreita = { '+', '-' };
         char[] operaattorit;
@@ -32,25 +36,43 @@ namespace Vt6
 
         Random rand = new Random();
 
+
         public MainWindow()
         {
             InitializeComponent();
+            AddHandler(DragAndDropBehaviour.RaahausEvent, new RoutedEventHandler(Dock_Raahaus));
+            laskuTimer.IsEnabled = true;
+            laskuTimer.Tick += UpdateTimer;
         }
 
 
+        /// <summary>
+        /// Päivitetään timer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateTimer(object sender, EventArgs e)
+        {
+            AikaLabel.Content = String.Format("{0:00}:{1:00}", Timer.Elapsed.Minutes, Timer.Elapsed.Seconds, Timer.Elapsed.Milliseconds);
+        }
 
+
+        /// <summary>
+        /// Lasketaan raahauksien määrä.
+        /// </summary>
         public int Raahaukset
         {
             get { return (int)GetValue(RaahauksetProperty); }
             set { SetValue(RaahauksetProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for Raahaukset.  This enables animation, styling, binding, etc...
+        
         public static readonly DependencyProperty RaahauksetProperty =
             DependencyProperty.Register("Raahaukset", typeof(int), typeof(MainWindow), new PropertyMetadata(0));
 
-
-
+        
+        /// <summary>
+        /// Arvotaan luvut ja operaattorit laskutoimitukseen.
+        /// </summary>
         private void ArvoLuvut()
         {
             luvut = new int[lukuja];
@@ -69,6 +91,11 @@ namespace Vt6
             vastaus = laskeVastaus();
         }
 
+
+        /// <summary>
+        /// Lasketaan arvoituista luvuista oikea vastaus.
+        /// </summary>
+        /// <returns></returns>
         private int laskeVastaus()
         {
             int lasku = luvut[0];
@@ -89,6 +116,10 @@ namespace Vt6
             return lasku;
         }
 
+
+        /// <summary>
+        /// Luodaan luvuista ja operaattoreista labelit ikkunaan.
+        /// </summary>
         private void LuoLabelit()
         {
             foreach (int luku in luvut)
@@ -104,50 +135,67 @@ namespace Vt6
             }
 
             LuoOperaattoriLabel('=');
-
         }
 
+
+        /// <summary>
+        /// LuoLabelin jossa numero. Sisältää DragAndDropBehaviorin.
+        /// </summary>
+        /// <param name="luku"></param>
         private void LuoNumeroLabel(int luku)
         {
-            RaahausLabel label = new RaahausLabel();
+            Label label = new Label();
             label.Content = luku;
             label.Padding = new Thickness(10);
             label.Background = Brushes.SandyBrown;
-
-            //label.MouseMove += Label_MouseMove;
-
-
+            
+            label.SetValue(DragAndDropBehaviour.DragAndDropProperty, true);
+            
             Lukualue.Children.Add(label);
             Canvas.SetLeft(label, rand.NextDouble() * (Lukualue.ActualWidth - label.ActualWidth));
             Canvas.SetTop(label, rand.NextDouble() * (Lukualue.ActualHeight - label.ActualHeight));
         }
 
 
+        /// <summary>
+        /// LuoLabelin jossa numero. Sisältää DragAndDropBehaviorin.
+        /// </summary>
+        /// <param name="operaattori"></param>
         private void LuoOperaattoriLabel(char operaattori)
         {
-            RaahausLabel label = new RaahausLabel();
+            Label label = new Label();
             label.Content = operaattori;
             label.Padding = new Thickness(10);
             label.Background = Brushes.SandyBrown;
-
-            //label.MouseMove += Label_MouseMove;
-
-
+            
+            label.SetValue(DragAndDropBehaviour.DragAndDropProperty, true);
+            
             Lukualue.Children.Add(label);
 
             Canvas.SetLeft(label, rand.NextDouble() * (Lukualue.ActualWidth - 20));
             Canvas.SetTop(label, rand.NextDouble() * (Lukualue.ActualHeight - 20));
         }
 
+
+        /// <summary>
+        /// Tekee uuden pelin. Arpoo uudet luvut ja operaattorit ja nollaa Timerin.
+        /// </summary>
         public void UusiPeli()
         {
             Lukualue.Children.Clear();
             Vastausalue.Children.Clear();
             ArvoLuvut();
             LuoLabelit();
+            Timer.Reset();
+            Timer.Start();
+            Raahaukset = 0;
         }
 
 
+        /// <summary>
+        /// Tarkistaa annetun vastauksen.
+        /// </summary>
+        /// <returns></returns>
         public bool Tarkista()
         {
             string valimerkki = "";
@@ -161,7 +209,8 @@ namespace Vt6
                 if (control.Content is char)
                 {
                     vastausOperaattorit.Add((char)control.Content);
-                } else
+                }
+                else
                 {
                     vastausLuvut.Add((int)control.Content);
                 }
@@ -186,7 +235,7 @@ namespace Vt6
                 valimerkki = "|";
             }
 
-            Regex regex = new Regex("((" + luvutString + "|" + vastaus + ")(" + operaattoritString + "))+(" + luvutString + "|" + vastaus  + ")=" + "(" + luvutString + "|" +  vastaus + ")");
+            Regex regex = new Regex("((" + luvutString + "|" + vastaus + ")(" + operaattoritString + "))+(" + luvutString + "|" + vastaus + ")=" + "(" + luvutString + "|" + vastaus + ")");
 
             if (!regex.IsMatch(vastausString))
                 return false;
@@ -209,12 +258,23 @@ namespace Vt6
 
         }
 
+
+        /// <summary>
+        /// Kun ladataan ikkuna, tehdään uusi peli.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             UusiPeli();
-
         }
 
+
+        /// <summary>
+        /// Suoritetaan kun jotain raahataan ikkunassa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Dock_Raahaus(object sender, RoutedEventArgs e)
         {
 
@@ -222,6 +282,7 @@ namespace Vt6
             if (Tarkista())
             {
                 siirrotLabel.Background = Brushes.Green;
+                Timer.Stop();
             }
             else
             {
@@ -230,13 +291,18 @@ namespace Vt6
         }
 
 
+        /// <summary>
+        /// Vaihdetaan Raahattavan controllin parent.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_Drop(object sender, DragEventArgs e)
         {
             base.OnDrop(e);
 
             if (e.Data.GetDataPresent("Label"))
             {
-                RaahausLabel raahattava = (RaahausLabel)e.Data.GetData("Label");
+                Label raahattava = (Label)e.Data.GetData("Label");
                 Panel alku = (Panel)raahattava.Parent;
                 Panel loppu = (Panel)sender;
 
@@ -247,56 +313,66 @@ namespace Vt6
             e.Handled = true;
         }
 
+
+        /// <summary>
+        /// Uusipeli Command.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void New_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             UusiPeli();
         }
     }
 
-    public class RaahausLabel : Label
+
+
+    /// <summary>
+    /// Raahauksen toteutus.
+    /// </summary>
+    public static class DragAndDropBehaviour
     {
-        public static readonly RoutedEvent RaahausEvent = EventManager.RegisterRoutedEvent("Raahaus", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(RaahausLabel));
-
-        public event RoutedEventHandler Raahaus
+        public static bool GetDragAndDrop(DependencyObject obj)
         {
-            add { AddHandler(RaahausEvent, value); }
-            remove { RemoveHandler(RaahausEvent, value); }
+            return (bool)obj.GetValue(DragAndDropProperty);
         }
 
-        void RaiseRaahausEvent()
+        public static void SetDragAndDrop(DependencyObject obj, bool value)
         {
-            RoutedEventArgs newEventArgs = new RoutedEventArgs(RaahausLabel.RaahausEvent);
-            RaiseEvent(newEventArgs);
+            obj.SetValue(DragAndDropProperty, value);
         }
 
-        private void Drag(object sender, DragEventArgs e)
+        public static readonly DependencyProperty DragAndDropProperty =
+          DependencyProperty.RegisterAttached("DragAndDrop",
+          typeof(bool), typeof(DragAndDropBehaviour),
+          new UIPropertyMetadata(false, OnDragAndDropChanged));
+        
+
+        private static void OnDragAndDropChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            RaiseRaahausEvent();
+            Control control = (Control)sender;
+            bool isDragAndDrop = (bool)(e.NewValue);
+
+            if (isDragAndDrop)
+                control.MouseMove += DragAndDrop;
+            else
+                control.MouseMove -= DragAndDrop;
         }
 
-        protected override void OnMouseMove(MouseEventArgs e)
+        private static void DragAndDrop(object sender, MouseEventArgs e)
         {
-            base.OnMouseMove(e);
+            Control control = (Control)sender;
+
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DataObject data = new DataObject();
-                // Omadata, Double ja Label ovat ihan mitä tahansa itsekeksittyjä tunnisteita
-                // jos halutaan, että raahattava data toimii muissakin ohjelmissa niin on
-                // käytettävä DataFormatsin sisältämiä vaihtoehtoja
-
-                //data.SetData("OmaData", 10);
-                //data.SetData(DataFormats.StringFormat, "merkkijono");
-                //data.SetData("Double", 5.5);
-                data.SetData("Label", this);
-
-
-                // Aloitetaan raahaus
-                //((Panel)((RaahausLabel)sender).Parent).Children.Remove((RaahausLabel)sender);
-
-                System.Windows.DragDrop.DoDragDrop(this, data, DragDropEffects.Copy | DragDropEffects.Move);
-                RaiseRaahausEvent();
+                data.SetData("Label", control);
+                System.Windows.DragDrop.DoDragDrop(control, data, DragDropEffects.Copy | DragDropEffects.Move);
+                RoutedEventArgs neweventargs = new RoutedEventArgs(RaahausEvent);
+                (control).RaiseEvent(neweventargs);
             }
         }
 
+        public static readonly RoutedEvent RaahausEvent = EventManager.RegisterRoutedEvent("Raahaus", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Control));
     }
 }

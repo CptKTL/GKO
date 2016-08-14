@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vt6"
-        
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" 
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
@@ -19,9 +18,12 @@
                 <MenuItem Command="ApplicationCommands.New"></MenuItem>
             </MenuItem>
         </Menu>
-        <DockPanel LastChildFill="True" local:RaahausLabel.Raahaus="Dock_Raahaus" >
+        <DockPanel LastChildFill="True"  >
             <DockPanel DockPanel.Dock="Top" Name="Vastausalue" AllowDrop="True" Drop="Label_Drop" Background="Moccasin" Height="50" ></DockPanel>
-            <Label Name="siirrotLabel" Background="Red" Content="{Binding Raahaukset}" DockPanel.Dock="Right"></Label>
+            <StackPanel DockPanel.Dock="Right">
+                <Label Name="siirrotLabel" Background="Red" Content="{Binding Raahaukset}" ></Label>
+                <Label Name="AikaLabel"></Label>
+            </StackPanel>            
             <Canvas  Name="Lukualue" AllowDrop="True" Drop="Label_Drop" Background="Transparent"></Canvas>
         </DockPanel>
     </DockPanel>
