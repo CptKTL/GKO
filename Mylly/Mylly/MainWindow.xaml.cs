@@ -28,23 +28,34 @@ namespace Mylly
     public partial class MainWindow : Window
     {
         public static RoutedCommand InsertPiece = new RoutedCommand();
-        CommandBinding customCommandBinding = new CommandBinding(InsertPiece, ExecutedInsertPiece, CanExecuteInsertPiece);
+
         public static Pelitila tila = new Pelitila();
 
-        private static void CanExecuteInsertPiece(object sender, CanExecuteRoutedEventArgs e)
+        private void CanExecuteInsertPiece(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
 
-        private static void ExecutedInsertPiece(object sender, ExecutedRoutedEventArgs e)
+        private void ExecutedInsertPiece(object sender, ExecutedRoutedEventArgs e)
         {
             tila = Pelitila.Insert;
         }
 
         public MainWindow()
         {
+            CommandBinding InsertPieceBinding = new CommandBinding(InsertPiece, ExecutedInsertPiece, CanExecuteInsertPiece);
+            this.CommandBindings.Add(InsertPieceBinding);
             InitializeComponent();
-            this.CommandBindings.Add(customCommandBinding);
+
+
+        }
+
+        private void Window_Oma(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Oma event ikkuna");
+
+            Ellipse piste = (Ellipse)e.OriginalSource;
+
         }
     }
 

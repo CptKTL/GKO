@@ -24,6 +24,32 @@ namespace PelilautaNamespace
         {
             InitializeComponent();
         }
+
+        public void NappulaPisteMouseUp(object sender, MouseButtonEventArgs args)
+        {
+            Ellipse piste = (Ellipse)sender;
+
+            RaiseOmaEvent();
+        }
+
+        public static readonly RoutedEvent OmaEvent =
+EventManager.RegisterRoutedEvent("Oma", RoutingStrategy.Bubble,
+typeof(RoutedEventHandler), typeof(PelilautaController));
+
+        public event RoutedEventHandler Oma
+        {
+            add { AddHandler(OmaEvent, value); }
+            remove { RemoveHandler(OmaEvent, value); }
+        }
+
+        void RaiseOmaEvent()
+        {   // huom. tässä pitää olla luontiparametrina UserControl1.OmaEvent. Tämä
+            // erottaa eri eventit toisistaan
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(PelilautaController.OmaEvent);
+            RaiseEvent(newEventArgs);
+        }
+
+
     }
 
 
@@ -36,6 +62,10 @@ namespace PelilautaNamespace
             VerticalAlignment = VerticalAlignment.Stretch;
             SizeChanged += onSizeChanged;
         }
+
+
+
+
 
 
 
