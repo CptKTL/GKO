@@ -33,6 +33,11 @@ namespace Mylly
 
         private void CanExecuteInsertPiece(object sender, CanExecuteRoutedEventArgs e)
         {
+            if (tila == Pelitila.Insert)
+            {
+                e.CanExecute = false;
+                return;
+            }
             e.CanExecute = true;
         }
 
@@ -52,10 +57,23 @@ namespace Mylly
 
         private void Window_Oma(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Oma event ikkuna");
+            if (tila == Pelitila.Insert)
+            {
+                PelilautaNamespace.Pelialue alue = (PelilautaNamespace.Pelialue)e.OriginalSource;
 
-            Ellipse piste = (Ellipse)e.OriginalSource;
+                UusiNappula(alue);
 
+                tila = Pelitila.Odota;
+            }
+        }
+
+        private void UusiNappula(PelilautaNamespace.Pelialue alue)
+        {
+            PelinappulaNamespace.PeliNappula nappula = new PelinappulaNamespace.PeliNappula();
+            alue.Children.Add(nappula);
+            nappula.UpdateLayout();
+            Canvas.SetLeft(nappula, alue.PuolikasLeveys - (nappula.ActualWidth / 2));
+            Canvas.SetTop(nappula, alue.PuolikasKorkeus  - (nappula.ActualHeight / 2));
         }
     }
 

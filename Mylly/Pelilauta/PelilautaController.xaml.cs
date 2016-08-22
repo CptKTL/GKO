@@ -29,24 +29,9 @@ namespace PelilautaNamespace
         {
             Ellipse piste = (Ellipse)sender;
 
-            RaiseOmaEvent();
-        }
+            Pelialue alue = (Pelialue) piste.Parent;
 
-        public static readonly RoutedEvent OmaEvent =
-EventManager.RegisterRoutedEvent("Oma", RoutingStrategy.Bubble,
-typeof(RoutedEventHandler), typeof(PelilautaController));
-
-        public event RoutedEventHandler Oma
-        {
-            add { AddHandler(OmaEvent, value); }
-            remove { RemoveHandler(OmaEvent, value); }
-        }
-
-        void RaiseOmaEvent()
-        {   // huom. tässä pitää olla luontiparametrina UserControl1.OmaEvent. Tämä
-            // erottaa eri eventit toisistaan
-            RoutedEventArgs newEventArgs = new RoutedEventArgs(PelilautaController.OmaEvent);
-            RaiseEvent(newEventArgs);
+            alue.RaiseOmaEvent();
         }
 
 
@@ -61,6 +46,27 @@ typeof(RoutedEventHandler), typeof(PelilautaController));
             HorizontalAlignment = HorizontalAlignment.Stretch;
             VerticalAlignment = VerticalAlignment.Stretch;
             SizeChanged += onSizeChanged;
+        }
+
+
+
+
+
+        public static readonly RoutedEvent OmaEvent =
+EventManager.RegisterRoutedEvent("Oma", RoutingStrategy.Bubble,
+typeof(RoutedEventHandler), typeof(Pelialue));
+
+        public event RoutedEventHandler Oma
+        {
+            add { AddHandler(OmaEvent, value); }
+            remove { RemoveHandler(OmaEvent, value); }
+        }
+
+        public void RaiseOmaEvent()
+        {   // huom. tässä pitää olla luontiparametrina UserControl1.OmaEvent. Tämä
+            // erottaa eri eventit toisistaan
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(Pelialue.OmaEvent);
+            RaiseEvent(newEventArgs);
         }
 
 

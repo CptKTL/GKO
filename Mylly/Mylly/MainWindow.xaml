@@ -7,14 +7,14 @@
         xmlns:lauta="clr-namespace:PelilautaNamespace;assembly=Pelilauta"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="860"
-        lauta:PelilautaController.Oma="Window_Oma">
+        lauta:Pelialue.Oma="Window_Oma">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:MainWindow.InsertPiece}" CanExecute="CanExecuteInsertPiece" Executed="ExecutedInsertPiece"></CommandBinding>
      </Window.CommandBindings>
     <DockPanel LastChildFill="True">
         <Menu IsMainMenu="True" DockPanel.Dock="Top">
             <MenuItem Header="Game">
-                <MenuItem Header="Insert Piece" Command="{x:Static local:MainWindow.InsertPiece}"></MenuItem>
+                <MenuItem Header="Insert Piece"  Command="{x:Static local:MainWindow.InsertPiece}"></MenuItem>
             </MenuItem>
         </Menu>
         <lauta:PelilautaController></lauta:PelilautaController>

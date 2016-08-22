@@ -1,0 +1,12 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\bin\Debug\Pelinappula.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\bin\Debug\Pelinappula.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\PelinappulaControl.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\PelinappulaControl.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.pdb
