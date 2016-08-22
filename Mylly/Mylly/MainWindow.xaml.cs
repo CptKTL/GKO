@@ -14,61 +14,42 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Practices.Prism.Mvvm;
 
+
 namespace Mylly
 {
+    public enum Pelitila
+    {
+        Odota,
+        Insert
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static RoutedCommand InsertPiece = new RoutedCommand();
+        CommandBinding customCommandBinding = new CommandBinding(InsertPiece, ExecutedInsertPiece, CanExecuteInsertPiece);
+        public static Pelitila tila = new Pelitila();
+
+        private static void CanExecuteInsertPiece(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private static void ExecutedInsertPiece(object sender, ExecutedRoutedEventArgs e)
+        {
+            tila = Pelitila.Insert;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            this.CommandBindings.Add(customCommandBinding);
         }
     }
 
 
-    public partial class Pelialue : Canvas
-    {
-        public Pelialue()
-        {
-            //InitializeComponent();
-            HorizontalAlignment = HorizontalAlignment.Stretch;
-            VerticalAlignment = VerticalAlignment.Stretch;
-            SizeChanged += onSizeChanged;
-        }
 
 
 
-
-        public double PuolikasLeveys
-        {
-            get { return (double)GetValue(PuolikasLeveysProperty); }
-            set { SetValue(PuolikasLeveysProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for PuolikasLeveys.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty PuolikasLeveysProperty =
-            DependencyProperty.Register("PuolikasLeveys", typeof(double), typeof(Pelialue), new PropertyMetadata(0.0));
-
-
-
-        public double PuolikasKorkeus
-        {
-            get { return (double)GetValue(PuolikasKorkeusProperty); }
-            set { SetValue(PuolikasKorkeusProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for PuolikasKorkeus.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty PuolikasKorkeusProperty =
-            DependencyProperty.Register("PuolikasKorkeus", typeof(double), typeof(Pelialue), new PropertyMetadata(0.0));
-
-
-        void onSizeChanged(object sender, SizeChangedEventArgs args)
-        {
-            PuolikasKorkeus = ActualHeight / 2;
-            PuolikasLeveys = ActualWidth / 2;
-        }
-
-    }
 }

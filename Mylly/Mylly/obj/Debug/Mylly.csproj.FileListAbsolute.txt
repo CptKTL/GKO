@@ -17,4 +17,5 @@ D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\Mylly.Pro
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\Mylly.csproj.GenerateResource.Cache
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\Mylly.exe
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\Mylly.pdb
-D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\Pelilauta.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\Pelilauta.pdb

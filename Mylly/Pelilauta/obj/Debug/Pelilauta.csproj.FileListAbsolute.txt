@@ -1,0 +1,13 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\PelilautaController.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta_MarkupCompile.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta_MarkupCompile.lref
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\bin\Debug\Pelilauta.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\bin\Debug\Pelilauta.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\PelilautaController.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.g.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.Properties.Resources.resources
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.csproj.GenerateResource.Cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.csprojResolveAssemblyReference.cache
