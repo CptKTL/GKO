@@ -15,7 +15,7 @@ namespace MyllyPeliNamespace
     }
 
     public delegate void ChangedEventHandler(object sender, EventArgs e);
-    public delegate void ValittuEventHandler(object sender, EventArgs e);
+    public delegate void ValittuChangedEventHandler(object sender, EventArgs e);
 
     public class MyllyPeli
     {
@@ -66,13 +66,23 @@ namespace MyllyPeliNamespace
 
         public void ValitseNappula(Nappula valinta)
         {
+            if (valinta == valittuNappula && valittuNappula != null)
+            {
+                valittuNappula.Valittu = !valittuNappula.Valittu;
+                return;
+            }
+                
+
             if (valittuNappula != null)
             {
                 valittuNappula.Valittu = false;
             }
             valittuNappula = valinta;
-            valittuNappula.Valittu = true;
 
+            if (valinta != null)
+            {
+                valittuNappula.Valittu = true;
+            }
         }
 
         private void vaihdaVuoro()
@@ -107,6 +117,8 @@ namespace MyllyPeliNamespace
         {
             return lauta.nappulat[paikka];
         }
+
+
     }
 
     public class Pelaaja
@@ -119,7 +131,7 @@ namespace MyllyPeliNamespace
 
     public class Nappula
     {
-        public event ValittuEventHandler ValittuHandler;
+        public event ValittuChangedEventHandler ValittuChangedHandler;
 
 
         public int paikka = -1;
@@ -131,8 +143,9 @@ namespace MyllyPeliNamespace
         {
             this.paikka = paikka;
             this.pelaaja = pelaaja;
+
         }
-        
+
 
         public bool Valittu
         {
@@ -143,13 +156,14 @@ namespace MyllyPeliNamespace
             set
             {
                 _onValittu = value;
+                onChangedValittu(new EventArgs());
             }
         }
 
-        protected virtual void onValittu(EventArgs e)
+        protected virtual void onChangedValittu(EventArgs e)
         {
-            if (ValittuHandler != null)
-                ValittuHandler(this, e);
+            if (ValittuChangedHandler != null)
+                ValittuChangedHandler(this, e);
         }
     }
 
@@ -210,7 +224,7 @@ namespace MyllyPeliNamespace
 
         public bool Tyhja(int paikka)
         {
-            return nappulat[paikka] != null;
+            return nappulat[paikka] == null;
         }
 
         public bool ValidiPaikkaLisata(int paikka)

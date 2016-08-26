@@ -27,3 +27,5 @@ D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\About.g.c
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\About.baml
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\HelpWindow.g.cs
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\HelpWindow.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\SettingsWindow.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\SettingsWindow.baml

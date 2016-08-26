@@ -24,12 +24,15 @@ namespace Mylly
     /// </summary>
     public partial class MainWindow : Window
     {
+        Color color = Colors.Green;
+
         public static RoutedCommand InsertPiece = new RoutedCommand();
         public static RoutedCommand MovePiece = new RoutedCommand();
         public static RoutedCommand RemovePiece = new RoutedCommand();
         public static RoutedCommand AboutCommand = new RoutedCommand();
+        public static RoutedCommand SettingsCommand = new RoutedCommand();
         //public static RoutedCommand About = new RoutedCommand();
-
+        
         private MyllyPeli peli = new MyllyPeli();
         //private static Dictionary<int, Tuple<int, int>> PeliKoordToUIKoordMap = new Dictionary<int, Tuple<int, int>>();
         private static int[][] PeliKoordToUIKoordMap = new int[][]
@@ -97,11 +100,14 @@ namespace Mylly
             CommandBinding MovePieceBinding = new CommandBinding(MovePiece, ExecutedMovePiece, CanExecuteMovePiece);
             CommandBinding RemovePieceBinding = new CommandBinding(RemovePiece, ExecutedRemovePiece, CanExecuteRemovePiece);
             CommandBinding AboutBinding =       new CommandBinding(AboutCommand, CommandBindingAbout_Executed);
+            CommandBinding SettingsBinding =       new CommandBinding(SettingsCommand, CommandBindingSettings_Executed);
             this.CommandBindings.Add(InsertPieceBinding);
             this.CommandBindings.Add(MovePieceBinding);
             this.CommandBindings.Add(RemovePieceBinding);
             this.CommandBindings.Add(AboutBinding);
+            this.CommandBindings.Add(SettingsBinding);
             InitializeComponent();
+
             peli.Changed += PaivitaUI;
         }
 
@@ -151,16 +157,25 @@ namespace Mylly
 
                 Nappula uusi = peli.setTargetKoord(UIKoordsToPeliKoord(args.X, args.Y));
 
-                //peli.Lisaa(alue)
-                UusiNappula(args.Alue, uusi);
-
+                if (uusi != null)
+                {
+                    //peli.Lisaa(alue)
+                    UusiNappula(args.Alue, uusi);
+                }
                 peli.tila = Pelitila.Odota;
             }
         }
 
+        private void Window_PelinappulaClick(object sender, RoutedEventArgs e)
+        {
+            var args = (PelinappulaNamespace.PeliNappula.PelinappulaClickEventArgs)e;
+            Nappula valinta = peli.NappulaPaikassa(UIKoordsToPeliKoord(args.X, args.Y));
+            peli.ValitseNappula(valinta);
+        }
+
         private void UusiNappula(PelilautaNamespace.Pelialue alue, Nappula uusi)
         {
-            PelinappulaNamespace.PeliNappula nappula = new PelinappulaNamespace.PeliNappula(uusi);
+            PelinappulaNamespace.PeliNappula nappula = new PelinappulaNamespace.PeliNappula(uusi, color);
             alue.Children.Add(nappula);
             nappula.UpdateLayout();
             Canvas.SetLeft(nappula, alue.PuolikasLeveys - (nappula.ActualWidth / 2));
@@ -169,7 +184,7 @@ namespace Mylly
 
         private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Window click");
+            peli.ValitseNappula(null);
             peli.tila = Pelitila.Odota;
         }
         
@@ -183,6 +198,15 @@ namespace Mylly
         {
             HelpWindow help = new HelpWindow();
             help.ShowDialog();
+        }
+
+        private void CommandBindingSettings_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            SettingsWindow settings = new SettingsWindow();
+            settings.color = color;
+            settings.ShowDialog();
+
+            color = settings.color;
         }
     }
 

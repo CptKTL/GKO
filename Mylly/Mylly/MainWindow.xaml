@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mylly"
         xmlns:lauta="clr-namespace:PelilautaNamespace;assembly=Pelilauta"
+        xmlns:pelinappula="clr-namespace:PelinappulaNamespace;assembly=PeliNappula"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="860" MinHeight="480" MinWidth="680"
 lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
+        pelinappula:PeliNappula.PelinappulaClick="Window_PelinappulaClick"
+        
         MouseLeftButtonUp="Window_MouseLeftButtonUp">
     
     <Window.CommandBindings>
@@ -15,7 +18,8 @@ lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
         <CommandBinding Command="{x:Static local:MainWindow.InsertPiece}" CanExecute="CanExecuteInsertPiece" Executed="ExecutedInsertPiece"></CommandBinding>
         <CommandBinding Command="{x:Static local:MainWindow.MovePiece}" CanExecute="CanExecuteMovePiece" Executed="ExecutedMovePiece"></CommandBinding>
         <CommandBinding Command="{x:Static local:MainWindow.RemovePiece}" CanExecute="CanExecuteRemovePiece" Executed="ExecutedRemovePiece"></CommandBinding>
-        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBindingHelp_Executed"   ></CommandBinding> 
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBindingHelp_Executed"   ></CommandBinding>
+        <CommandBinding x:Name="asdf" Command="{x:Static local:MainWindow.SettingsCommand}" Executed="CommandBindingSettings_Executed"   ></CommandBinding>
     </Window.CommandBindings>
     
     <DockPanel LastChildFill="True">
@@ -26,6 +30,9 @@ lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
                 <MenuItem Header="_Move Piece" Command="{x:Static local:MainWindow.MovePiece}"/>
                 <MenuItem Header="_Remove Piece" Command="{x:Static local:MainWindow.RemovePiece}"/>
                 
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="_Settings..." Command="{x:Static local:MainWindow.SettingsCommand}"></MenuItem>
             </MenuItem>
             
             <MenuItem Header="_Help">

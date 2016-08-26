@@ -6,28 +6,23 @@
              xmlns:local="clr-namespace:PelinappulaNamespace"
              x:Name="control"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonUp="control_MouseLeftButtonUp">
+             d:DesignHeight="300" d:DesignWidth="300" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonUp="control_MouseLeftButtonUp" DataContext="{RelativeSource Self}">
 
     <UserControl.Resources>
         <Style TargetType="Ellipse">
             <Style.Setters>
-                <Setter Property="Fill" Value="Beige" />
+                <Setter Property="Fill" Value="{Binding color, ElementName=control}" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
                 <Setter Property="Stroke" Value="Transparent" />
                 <Setter Property="StrokeThickness" Value="6" />
                 <Setter Property="Height" Value="50" />
                 <Setter Property="VerticalAlignment" Value="Center" />
-                <Setter Property="Width" Value="50"/> 
+                <Setter Property="Width" Value="50"/>
             </Style.Setters>
-            <Style.Triggers>
-                <DataTrigger  Binding="{Binding IsSelected, ElementName=control}" Value="true">
-                    <Setter Property="Stroke" Value="Red"></Setter>
-                </DataTrigger>
-            </Style.Triggers>
         </Style>
     </UserControl.Resources>
     <!--<Grid Width="Auto" Height="Auto">-->
-    <Ellipse Name="ympyra"/>
+    <Ellipse Name="ympyra" />
 
     <!--</Grid>-->
 </UserControl>
