@@ -21,3 +21,9 @@ D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\Pelilauta
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\Pelilauta.pdb
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\Pelinappula.dll
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\Pelinappula.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\MyllyPeli.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\bin\Debug\MyllyPeli.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\About.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\About.baml
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\HelpWindow.g.cs
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Mylly\obj\Debug\HelpWindow.baml

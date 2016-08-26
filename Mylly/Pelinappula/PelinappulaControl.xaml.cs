@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyllyPeliNamespace;
 
 namespace PelinappulaNamespace
 {
@@ -20,41 +21,37 @@ namespace PelinappulaNamespace
     /// </summary>
     public partial class PeliNappula : UserControl
     {
+        Nappula nappula = null;
 
 
-        //public double KeskiX
-        //{
-        //    get { return (double)GetValue(KeskiXProperty); }
-        //    set { SetValue(KeskiXProperty, value); }
-        //}
+        public bool IsSelected
+        {
+            get { return (bool)GetValue(IsSelectedProperty); }
+            set { SetValue(IsSelectedProperty, value); }
+        }
 
-        //// Using a DependencyProperty as the backing store for KeskiX.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty KeskiXProperty =
-        //    DependencyProperty.Register("KeskiX", typeof(double), typeof(PeliNappula), new PropertyMetadata(0));
+        // Using a DependencyProperty as the backing store for IsSelected.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsSelectedProperty =
+            DependencyProperty.Register("IsSelected", typeof(bool), typeof(PeliNappula), new PropertyMetadata(false));
 
 
 
-        //public double KeskiY
-        //{
-        //    get { return (double)GetValue(KeskiYProperty); }
-        //    set { SetValue(KeskiYProperty, value); }
-        //}
 
-        //// Using a DependencyProperty as the backing store for KeskiY.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty KeskiYProperty =
-        //    DependencyProperty.Register("KeskiY", typeof(double), typeof(PeliNappula), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender, KeskiYChanged));
 
-        //private static object KeskiYChanged(DependencyObject d, object baseValue)
-        //{
-
-        //    return (double)baseValue - (((PeliNappula)d).nappula.ActualHeight / 2);
-        //}
-
-        public PeliNappula()
+        public PeliNappula(Nappula nappula)
         {
             InitializeComponent();
             HorizontalAlignment = HorizontalAlignment.Center;
             VerticalAlignment = VerticalAlignment.Center;
+
+            this.nappula = nappula;
+        }
+
+        private void control_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("nappula click");
+
+            e.Handled = true;
         }
     }
 }

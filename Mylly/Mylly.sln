@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelilauta", "Pelilauta\Peli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelinappula", "Pelinappula\Pelinappula.csproj", "{4C243367-3CBC-4789-9A3B-B5D0CD84A59C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyllyPeli", "MyllyPeli\MyllyPeli.csproj", "{ABF24623-88B7-4AE5-8DDB-DF9A0930BF89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4C243367-3CBC-4789-9A3B-B5D0CD84A59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C243367-3CBC-4789-9A3B-B5D0CD84A59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C243367-3CBC-4789-9A3B-B5D0CD84A59C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF24623-88B7-4AE5-8DDB-DF9A0930BF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF24623-88B7-4AE5-8DDB-DF9A0930BF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF24623-88B7-4AE5-8DDB-DF9A0930BF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF24623-88B7-4AE5-8DDB-DF9A0930BF89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

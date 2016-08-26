@@ -6,17 +6,35 @@
         xmlns:local="clr-namespace:Mylly"
         xmlns:lauta="clr-namespace:PelilautaNamespace;assembly=Pelilauta"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="860"
-        lauta:Pelialue.Oma="Window_Oma">
+        Title="MainWindow" Height="640" Width="860" MinHeight="480" MinWidth="680"
+lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
+        MouseLeftButtonUp="Window_MouseLeftButtonUp">
+    
     <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.AboutCommand}" Executed="CommandBindingAbout_Executed"></CommandBinding>
         <CommandBinding Command="{x:Static local:MainWindow.InsertPiece}" CanExecute="CanExecuteInsertPiece" Executed="ExecutedInsertPiece"></CommandBinding>
-     </Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.MovePiece}" CanExecute="CanExecuteMovePiece" Executed="ExecutedMovePiece"></CommandBinding>
+        <CommandBinding Command="{x:Static local:MainWindow.RemovePiece}" CanExecute="CanExecuteRemovePiece" Executed="ExecutedRemovePiece"></CommandBinding>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBindingHelp_Executed"   ></CommandBinding> 
+    </Window.CommandBindings>
+    
     <DockPanel LastChildFill="True">
         <Menu IsMainMenu="True" DockPanel.Dock="Top">
-            <MenuItem Header="Game">
-                <MenuItem Header="Insert Piece"  Command="{x:Static local:MainWindow.InsertPiece}"></MenuItem>
+            <MenuItem Header="_File"></MenuItem>
+            <MenuItem Header="_Game">
+                <MenuItem Header="_Insert Piece"  Command="{x:Static local:MainWindow.InsertPiece}"></MenuItem>
+                <MenuItem Header="_Move Piece" Command="{x:Static local:MainWindow.MovePiece}"/>
+                <MenuItem Header="_Remove Piece" Command="{x:Static local:MainWindow.RemovePiece}"/>
+                
             </MenuItem>
+            
+            <MenuItem Header="_Help">
+                        <MenuItem Command="ApplicationCommands.Help"></MenuItem>
+                <MenuItem Header="About" Command="{x:Static local:MainWindow.AboutCommand}"/>
+
+            </MenuItem>
+
         </Menu>
-        <lauta:PelilautaController></lauta:PelilautaController>
+        <lauta:PelilautaController Name="pelilauta"></lauta:PelilautaController>
     </DockPanel>
 </Window>

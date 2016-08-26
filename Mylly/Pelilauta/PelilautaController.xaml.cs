@@ -29,45 +29,103 @@ namespace PelilautaNamespace
         {
             Ellipse piste = (Ellipse)sender;
 
-            Pelialue alue = (Pelialue) piste.Parent;
-
-            alue.RaiseOmaEvent();
+            Pelialue alue = (Pelialue)piste.Parent;
+            MessageBox.Show("ympyrä click");
+            args.Handled = true;
+            RaisePelipisteClickEvent(alue.getXIndex(), alue.getYIndex(), alue);
         }
 
+        public delegate void PelipisteClickEventHandler(object sender, PelipisteClickEventArgs e);
+        // oma luokka oman datan siirtelyyn
+        public class PelipisteClickEventArgs : RoutedEventArgs
+        {
+            private int _x = -1;
+            private int _y = -1;
+            private Pelialue _alue;
 
+            public int X
+            {
+                get { return _x; }
+                set { _x = value; }
+            }
+            public int Y
+            {
+                get { return _y; }
+                set { _y = value; }
+            }
+            public Pelialue Alue
+            {
+                get { return _alue; }
+                set { _alue = value; }
+            }
+            public PelipisteClickEventArgs(RoutedEvent routedEvent, int x, int y, Pelialue alue) : base(routedEvent)
+            {
+                X = x;
+                Y = y;
+                Alue = alue;
+            }
+        }
+
+        // määritellään routedevent. Huomatkaa typeof pitää olla nyt OmaArgsRoutedEventHandler eli 
+        // sama mitä yllä luotiin
+        public static readonly RoutedEvent PelipisteClickEvent =
+EventManager.RegisterRoutedEvent("OmaArgs", RoutingStrategy.Bubble,
+typeof(PelipisteClickEventHandler), typeof(PelilautaController));
+
+        public event RoutedEventHandler PelipisteClick
+        {
+            add { AddHandler(PelipisteClickEvent, value); }
+            remove { RemoveHandler(PelipisteClickEvent, value); }
+        }
+
+        void RaisePelipisteClickEvent(int x, int y, Pelialue alue)
+        { // nyt luodaan oma args-luokan esiintymä, tarvitaan routeventin tyyppi (OmaArgsEvent! ei vahingossakaan sama kuin edellisessä!) ja varsinainen oma parametri
+            PelipisteClickEventArgs newEventArgs = new PelipisteClickEventArgs(PelilautaController.PelipisteClickEvent, x, y, alue);
+            RaiseEvent(newEventArgs);
+        }
     }
 
 
     public partial class Pelialue : Canvas
     {
+        
+
         public Pelialue()
         {
             //InitializeComponent();
             HorizontalAlignment = HorizontalAlignment.Stretch;
             VerticalAlignment = VerticalAlignment.Stretch;
             SizeChanged += onSizeChanged;
+
         }
 
 
-
-
-
-        public static readonly RoutedEvent OmaEvent =
-EventManager.RegisterRoutedEvent("Oma", RoutingStrategy.Bubble,
-typeof(RoutedEventHandler), typeof(Pelialue));
-
-        public event RoutedEventHandler Oma
+        public int getXIndex()
         {
-            add { AddHandler(OmaEvent, value); }
-            remove { RemoveHandler(OmaEvent, value); }
+            return ((Panel)this.Parent).Children.IndexOf(this) % 7;
+        }
+        public int getYIndex()
+        {
+            return ((Panel)this.Parent).Children.IndexOf(this) / 7;
         }
 
-        public void RaiseOmaEvent()
-        {   // huom. tässä pitää olla luontiparametrina UserControl1.OmaEvent. Tämä
-            // erottaa eri eventit toisistaan
-            RoutedEventArgs newEventArgs = new RoutedEventArgs(Pelialue.OmaEvent);
-            RaiseEvent(newEventArgs);
-        }
+
+        //public static readonly RoutedEvent PelipisteClickEvent =
+        //    EventManager.RegisterRoutedEvent("Oma", RoutingStrategy.Bubble,
+        //    typeof(RoutedEventHandler), typeof(Pelialue));
+
+        //public event RoutedEventHandler PelipisteClick
+        //{
+        //    add { AddHandler(PelipisteClickEvent, value); }
+        //    remove { RemoveHandler(PelipisteClickEvent, value); }
+        //}
+
+        //public void RaiseOmaEvent()
+        //{   // huom. tässä pitää olla luontiparametrina UserControl1.OmaEvent. Tämä
+        //    // erottaa eri eventit toisistaan
+        //    RoutedEventArgs newEventArgs = new RoutedEventArgs(Pelialue.PelipisteClickEvent);
+        //    RaiseEvent(newEventArgs);
+        //}
 
 
 
