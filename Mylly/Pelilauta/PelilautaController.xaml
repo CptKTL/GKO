@@ -90,7 +90,7 @@
 
 
     </UserControl.Resources>
-    <UniformGrid Rows="7" Columns="7" >
+    <UniformGrid Name="lauta" Rows="7" Columns="7" >
         <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

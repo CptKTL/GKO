@@ -16,6 +16,8 @@ namespace MyllyPeliNamespace
 
     public delegate void ChangedEventHandler(object sender, EventArgs e);
     public delegate void ValittuChangedEventHandler(object sender, EventArgs e);
+    public delegate void ValittuPoistettuEventHandler(object sender, EventArgs e);
+    public delegate void ValittuSiirrettyEventHandler(object sender, EventArgs e);
 
     public class MyllyPeli
     {
@@ -37,6 +39,19 @@ namespace MyllyPeliNamespace
                 Changed(this, e);
         }
 
+
+        public void Siirra()
+        {
+            if (valittuNappula == null || tila != Pelitila.Odota)
+            {
+
+                return;
+            }
+
+            tila = Pelitila.Siirra;
+
+
+        }
         public Nappula setTargetKoord(int targetKoord)
         {
             _targetKoord = targetKoord;
@@ -48,7 +63,27 @@ namespace MyllyPeliNamespace
                         return UusiNappula();
                         break;
                     }
+                case (Pelitila.Siirra):
+                    {
+                        return SiirraNappula();
+                        break;
+                    }
             }
+
+            return null;
+        }
+
+        private Nappula SiirraNappula()
+        {
+
+            if (valittuNappula == null)
+                return null;
+
+
+            tila = Pelitila.Odota;
+            if (lauta.Siirra(valittuNappula, _targetKoord))
+                            return valittuNappula;
+
 
             return null;
         }
@@ -69,9 +104,10 @@ namespace MyllyPeliNamespace
             if (valinta == valittuNappula && valittuNappula != null)
             {
                 valittuNappula.Valittu = !valittuNappula.Valittu;
+                valittuNappula = null;
                 return;
             }
-                
+
 
             if (valittuNappula != null)
             {
@@ -101,6 +137,8 @@ namespace MyllyPeliNamespace
             }
 
             OnChanged(new EventArgs());
+            tila = Pelitila.Odota;
+
             return uusi;
         }
 
@@ -118,7 +156,16 @@ namespace MyllyPeliNamespace
             return lauta.nappulat[paikka];
         }
 
-
+        public void PoistaNappula()
+        {
+            if (valittuNappula != null)
+            {
+                valittuNappula.Poistetaan();
+                lauta.poista(valittuNappula);
+                valittuNappula = null;
+            }
+            tila = Pelitila.Odota;
+        }
     }
 
     public class Pelaaja
@@ -132,18 +179,30 @@ namespace MyllyPeliNamespace
     public class Nappula
     {
         public event ValittuChangedEventHandler ValittuChangedHandler;
+        public event ValittuPoistettuEventHandler ValittuPoistettuHandler;
+        public event ValittuSiirrettyEventHandler ValittuSiirrettyHandler;
 
 
-        public int paikka = -1;
+        public int _paikka = -1;
         public bool poydalla = false;
         private bool _onValittu = false;
         Pelaaja pelaaja;
 
         public Nappula(int paikka, Pelaaja pelaaja)
         {
-            this.paikka = paikka;
+            this.Paikka = paikka;
             this.pelaaja = pelaaja;
 
+        }
+
+        public int Paikka
+        {
+            get { return _paikka; }
+            set
+            {
+                onSiirretty(new EventArgs());
+                _paikka = value;
+            }
         }
 
 
@@ -164,6 +223,23 @@ namespace MyllyPeliNamespace
         {
             if (ValittuChangedHandler != null)
                 ValittuChangedHandler(this, e);
+        }
+
+        protected virtual void onPoistettu(EventArgs e)
+        {
+            if (ValittuPoistettuHandler != null)
+                ValittuPoistettuHandler(this, e);
+        }
+
+        protected virtual void onSiirretty(EventArgs e)
+        {
+            if (ValittuSiirrettyHandler != null)
+                ValittuSiirrettyHandler(this, e);
+        }
+
+        public void Poistetaan()
+        {
+            onPoistettu(new EventArgs());
         }
     }
 
@@ -236,17 +312,19 @@ namespace MyllyPeliNamespace
 
         public bool ValidiPaikkaSiirtää(int mista, int mihin)
         {
-            return (Tyhja(mista) && OnkoNaapuri(mista, mihin));
+            return (Tyhja(mihin) && OnkoNaapuri(mista, mihin));
         }
 
         public bool OnkoNaapuri(int paikka, int naapuri)
         {
-            foreach (var naapuriMahdollisuus in Naapurit)
-            {
-                if (naapuriMahdollisuus.Contains(paikka) && naapuriMahdollisuus.Contains(naapuri))
-                    return true;
-            }
-            return false;
+            return Naapurit[paikka].Contains(naapuri);
+
+            //foreach (var naapuriMahdollisuus in Naapurit)
+            //{
+            //    if (naapuriMahdollisuus.Contains(paikka) && naapuriMahdollisuus.Contains(naapuri))
+            //        return true;
+            //}
+            //return false;
         }
 
         public bool Lisaa(Nappula nappula, int paikka)
@@ -262,14 +340,20 @@ namespace MyllyPeliNamespace
 
         public bool Siirra(Nappula nappula, int paikka)
         {
-            if (!ValidiPaikkaSiirtää(nappula.paikka, paikka))
+            if (!ValidiPaikkaSiirtää(nappula.Paikka, paikka))
             {
                 return false;
             }
 
             nappulat[paikka] = nappula;
-            nappulat[nappula.paikka] = null;
+            nappulat[nappula.Paikka] = null;
+            nappula.Paikka = paikka;
             return true;
+        }
+
+        public void poista(Nappula nappula)
+        {
+            nappulat[nappula.Paikka] = null;
         }
 
         public Lauta()

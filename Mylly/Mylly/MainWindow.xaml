@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="860" MinHeight="480" MinWidth="680"
 lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
-        pelinappula:PeliNappula.PelinappulaClick="Window_PelinappulaClick"
+        lauta:PelilautaController.PelinappulaClick="Window_PelinappulaClick"
         
         MouseLeftButtonUp="Window_MouseLeftButtonUp">
     
@@ -42,6 +42,7 @@ lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
             </MenuItem>
 
         </Menu>
+        <TextBlock Name="Tuloste" DockPanel.Dock="Bottom" ></TextBlock>
         <lauta:PelilautaController Name="pelilauta"></lauta:PelilautaController>
     </DockPanel>
 </Window>

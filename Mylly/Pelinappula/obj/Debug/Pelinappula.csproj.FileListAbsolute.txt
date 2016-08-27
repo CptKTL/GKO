@@ -12,5 +12,3 @@ D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pel
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\obj\Debug\Pelinappula.pdb
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\bin\Debug\MyllyPeli.dll
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\bin\Debug\MyllyPeli.pdb
-D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\bin\Debug\Pelilauta.dll
-D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelinappula\bin\Debug\Pelilauta.pdb

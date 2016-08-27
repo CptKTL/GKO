@@ -11,3 +11,7 @@ D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelil
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.dll
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.pdb
 D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\obj\Debug\Pelilauta.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\bin\Debug\MyllyPeli.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\bin\Debug\Pelinappula.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\bin\Debug\MyllyPeli.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\Pelilauta\bin\Debug\Pelinappula.pdb

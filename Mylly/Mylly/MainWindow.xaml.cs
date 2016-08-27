@@ -32,7 +32,7 @@ namespace Mylly
         public static RoutedCommand AboutCommand = new RoutedCommand();
         public static RoutedCommand SettingsCommand = new RoutedCommand();
         //public static RoutedCommand About = new RoutedCommand();
-        
+
         private MyllyPeli peli = new MyllyPeli();
         //private static Dictionary<int, Tuple<int, int>> PeliKoordToUIKoordMap = new Dictionary<int, Tuple<int, int>>();
         private static int[][] PeliKoordToUIKoordMap = new int[][]
@@ -99,16 +99,15 @@ namespace Mylly
             CommandBinding InsertPieceBinding = new CommandBinding(InsertPiece, ExecutedInsertPiece, CanExecuteInsertPiece);
             CommandBinding MovePieceBinding = new CommandBinding(MovePiece, ExecutedMovePiece, CanExecuteMovePiece);
             CommandBinding RemovePieceBinding = new CommandBinding(RemovePiece, ExecutedRemovePiece, CanExecuteRemovePiece);
-            CommandBinding AboutBinding =       new CommandBinding(AboutCommand, CommandBindingAbout_Executed);
-            CommandBinding SettingsBinding =       new CommandBinding(SettingsCommand, CommandBindingSettings_Executed);
+            CommandBinding AboutBinding = new CommandBinding(AboutCommand, CommandBindingAbout_Executed);
+            CommandBinding SettingsBinding = new CommandBinding(SettingsCommand, CommandBindingSettings_Executed);
             this.CommandBindings.Add(InsertPieceBinding);
             this.CommandBindings.Add(MovePieceBinding);
             this.CommandBindings.Add(RemovePieceBinding);
             this.CommandBindings.Add(AboutBinding);
             this.CommandBindings.Add(SettingsBinding);
             InitializeComponent();
-
-            peli.Changed += PaivitaUI;
+            
         }
 
         private void CanExecuteRemovePiece(object sender, CanExecuteRoutedEventArgs e)
@@ -123,12 +122,14 @@ namespace Mylly
 
         private void ExecutedRemovePiece(object sender, ExecutedRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+
+            peli.PoistaNappula();
+
         }
 
         private void CanExecuteMovePiece(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (peli.valittuNappula != null)
+            if (peli.valittuNappula != null && peli.tila == Pelitila.Odota)
             {
                 e.CanExecute = true;
                 return;
@@ -138,16 +139,9 @@ namespace Mylly
 
         private void ExecutedMovePiece(object sender, ExecutedRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            peli.Siirra();
         }
-
-        private void PaivitaUI(object sender, EventArgs e)
-        {
-            for (int i = 0; i < PeliKoordToUIKoordMap.Length; i++)
-            {
-
-            }
-        }
+        
 
         private void Window_PelipisteClick(object sender, RoutedEventArgs e)
         {
@@ -162,13 +156,27 @@ namespace Mylly
                     //peli.Lisaa(alue)
                     UusiNappula(args.Alue, uusi);
                 }
-                peli.tila = Pelitila.Odota;
+            }
+            else if (peli.tila == Pelitila.Siirra)
+            {
+                var args = (PelilautaNamespace.PelilautaController.PelipisteClickEventArgs)e;
+
+                Nappula siirretty = peli.setTargetKoord(UIKoordsToPeliKoord(args.X, args.Y));
+
+                if (siirretty != null)
+                {
+                    UusiNappula(args.Alue, siirretty);
+                }
+                else
+                {
+                    Tuloste.Text = "Ei validi kohde.";
+                }
             }
         }
 
         private void Window_PelinappulaClick(object sender, RoutedEventArgs e)
         {
-            var args = (PelinappulaNamespace.PeliNappula.PelinappulaClickEventArgs)e;
+            var args = (PelilautaNamespace.PelilautaController.PelinappulaClickEventArgs)e;
             Nappula valinta = peli.NappulaPaikassa(UIKoordsToPeliKoord(args.X, args.Y));
             peli.ValitseNappula(valinta);
         }
@@ -187,10 +195,11 @@ namespace Mylly
             peli.ValitseNappula(null);
             peli.tila = Pelitila.Odota;
         }
-        
+
         private void CommandBindingAbout_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            About about = new About(); ;
+            About about = new About();
+            ;
             about.ShowDialog();
         }
 
