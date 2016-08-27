@@ -24,8 +24,14 @@ namespace PelilautaNamespace
         public PelilautaController()
         {
             InitializeComponent();
+            
         }
         
+
+        public Pelialue AnnaPelialue(int x, int y)
+        {
+            return (Pelialue)lauta.Children[7 * y + x];
+        }
 
         public void NappulaPisteMouseUp(object sender, MouseButtonEventArgs args)
         {
@@ -70,7 +76,7 @@ namespace PelilautaNamespace
         // määritellään routedevent. Huomatkaa typeof pitää olla nyt OmaArgsRoutedEventHandler eli 
         // sama mitä yllä luotiin
         public static readonly RoutedEvent PelipisteClickEvent =
-EventManager.RegisterRoutedEvent("OmaArgs", RoutingStrategy.Bubble,
+EventManager.RegisterRoutedEvent("PelipisteClickEventArgs", RoutingStrategy.Bubble,
 typeof(PelipisteClickEventHandler), typeof(PelilautaController));
 
         public event RoutedEventHandler PelipisteClick
@@ -85,72 +91,16 @@ typeof(PelipisteClickEventHandler), typeof(PelilautaController));
             RaiseEvent(newEventArgs);
         }
 
-        private void control_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            PeliNappula piste = (PeliNappula)sender;
-
-            Pelialue alue = (Pelialue)piste.Parent;
-            e.Handled = true;
-            RaisePelipisteClickEvent(alue.getXIndex(), alue.getYIndex(), alue);
-
-            e.Handled = true;
-        }
 
 
-        public delegate void PelinappulaClickEventHandler(object sender, PelinappulaClickEventArgs e);
-        //oma luokka oman datan siirtelyyn
-        public class PelinappulaClickEventArgs : RoutedEventArgs
-        {
-            private int _x = -1;
-            private int _y = -1;
-            private Pelialue _alue;
 
-            public int X
-            {
-                get { return _x; }
-                set { _x = value; }
-            }
-            public int Y
-            {
-                get { return _y; }
-                set { _y = value; }
-            }
-            public Pelialue Alue
-            {
-                get { return _alue; }
-                set { _alue = value; }
-            }
-            public PelinappulaClickEventArgs(RoutedEvent routedEvent, int x, int y) : base(routedEvent)
-            {
-                X = x;
-                Y = y;
-            }
-        }
-
-        //määritellään routedevent.Huomatkaa typeof pitää olla nyt OmaArgsRoutedEventHandler eli
-        //sama mitä yllä luotiin
-        public static readonly RoutedEvent PelinappulaClickEvent =
-EventManager.RegisterRoutedEvent("OmaArgs", RoutingStrategy.Bubble,
-typeof(PelinappulaClickEventHandler), typeof(PelilautaController));
-
-        public event RoutedEventHandler PelinappulaClick
-        {
-            add { AddHandler(PelinappulaClickEvent, value); }
-            remove { RemoveHandler(PelinappulaClickEvent, value); }
-        }
-
-        void RaisePelipisteClickEvent(int x, int y)
-        { // nyt luodaan oma args-luokan esiintymä, tarvitaan routeventin tyyppi (OmaArgsEvent! ei vahingossakaan sama kuin edellisessä!) ja varsinainen oma parametri
-            PelinappulaClickEventArgs newEventArgs = new PelinappulaClickEventArgs(PelilautaController.PelinappulaClickEvent, x, y);
-            RaiseEvent(newEventArgs);
-        }
     }
 
 
 
     public partial class Pelialue : Canvas
     {
-        
+        private PeliNappula nappula;
 
         public Pelialue()
         {
@@ -161,12 +111,52 @@ typeof(PelinappulaClickEventHandler), typeof(PelilautaController));
 
         }
 
+        public void  lisaaNappula(PeliNappula nappula)
+        {
+            this.nappula = nappula;
+            Children.Add(nappula);
+            nappula.UpdateLayout();
+            Canvas.SetLeft(nappula, PuolikasLeveys - (nappula.ActualWidth / 2));
+            Canvas.SetTop(nappula, PuolikasKorkeus - (nappula.ActualHeight / 2));
+            nappula.MouseLeftButtonUp += UserControl_MouseLeftButtonUp;
+ //           nappula.nappula.ValittuChangedHandler += NappulaValittu;
+            nappula.nappula.ValittuPoistettuHandler += NappulaPoistettu;
+            //nappula.nappula.ValittuSiirrettyHandler += NappulaSiirretty;
+        }
+
+        public PeliNappula AnnaNappula()
+        {
+            return nappula;
+        }
+
+        //private void NappulaSiirretty(object sender, EventArgs e)
+        //{
+        //    ((Panel)nappula.Parent).Children.Remove(nappula);
+        //}
+
+        private void NappulaPoistettu(object sender, EventArgs e)
+        {
+            Children.Remove(nappula);
+            nappula.MouseLeftButtonUp -= UserControl_MouseLeftButtonUp;
+            nappula.nappula.ValittuPoistettuHandler -= NappulaPoistettu;
+
+            nappula = null;
+        }
+
+        private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = true;
+            RaisePelipisteClickEvent(this.getXIndex(), getYIndex(), this);
+            e.Handled = true;
+        }
 
         public int getXIndex()
         {
             return ((Panel)this.Parent).Children.IndexOf(this) % 7;
         }
+
         public int getYIndex()
+
         {
             return ((Panel)this.Parent).Children.IndexOf(this) / 7;
         }
@@ -196,10 +186,23 @@ typeof(PelinappulaClickEventHandler), typeof(PelilautaController));
 
 
 
+
+
+
         public double PuolikasLeveys
         {
             get { return (double)GetValue(PuolikasLeveysProperty); }
             set { SetValue(PuolikasLeveysProperty, value); }
+        }
+
+        public void SiirraNappula(Pelialue alue)
+        {
+            Children.Remove(nappula);
+            nappula.MouseLeftButtonUp -= UserControl_MouseLeftButtonUp;
+            nappula.nappula.ValittuPoistettuHandler -= NappulaPoistettu;
+
+            alue.lisaaNappula(nappula);
+            nappula = null;
         }
 
         // Using a DependencyProperty as the backing store for PuolikasLeveys.  This enables animation, styling, binding, etc...
@@ -223,6 +226,62 @@ typeof(PelinappulaClickEventHandler), typeof(PelilautaController));
         {
             PuolikasKorkeus = ActualHeight / 2;
             PuolikasLeveys = ActualWidth / 2;
+            if (nappula != null)
+            {
+                nappula?.UpdateLayout();
+                Canvas.SetLeft(this, PuolikasLeveys - ActualWidth / 2);
+                Canvas.SetTop(this, PuolikasKorkeus - ActualHeight / 2);
+            }
+        }
+
+
+        public delegate void PelinappulaClickEventHandler(object sender, PelinappulaClickEventArgs e);
+        //oma luokka oman datan siirtelyyn
+        public class PelinappulaClickEventArgs : RoutedEventArgs
+        {
+            private int _x = -1;
+            private int _y = -1;
+            private Pelialue _alue;
+
+            public int X
+            {
+                get { return _x; }
+                set { _x = value; }
+            }
+            public int Y
+            {
+                get { return _y; }
+                set { _y = value; }
+            }
+            public Pelialue Alue
+            {
+                get { return _alue; }
+                set { _alue = value; }
+            }
+            public PelinappulaClickEventArgs(RoutedEvent routedEvent, int x, int y, Pelialue alue) : base(routedEvent)
+            {
+                X = x;
+                Y = y;
+                Alue = alue;
+            }
+        }
+
+        //määritellään routedevent.Huomatkaa typeof pitää olla nyt OmaArgsRoutedEventHandler eli
+        //sama mitä yllä luotiin
+        public static readonly RoutedEvent PelinappulaClickEvent =
+EventManager.RegisterRoutedEvent("PelinappulaClickEvent", RoutingStrategy.Bubble,
+typeof(PelinappulaClickEventHandler), typeof(Pelialue));
+
+        public event RoutedEventHandler PelinappulaClick
+        {
+            add { AddHandler(PelinappulaClickEvent, value); }
+            remove { RemoveHandler(PelinappulaClickEvent, value); }
+        }
+
+        void RaisePelipisteClickEvent(int x, int y, Pelialue alue)
+        { // nyt luodaan oma args-luokan esiintymä, tarvitaan routeventin tyyppi (OmaArgsEvent! ei vahingossakaan sama kuin edellisessä!) ja varsinainen oma parametri
+            PelinappulaClickEventArgs newEventArgs = new PelinappulaClickEventArgs(Pelialue.PelinappulaClickEvent, x, y, alue);
+            RaiseEvent(newEventArgs);
         }
     }
 }

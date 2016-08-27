@@ -107,7 +107,7 @@ namespace Mylly
             this.CommandBindings.Add(AboutBinding);
             this.CommandBindings.Add(SettingsBinding);
             InitializeComponent();
-            
+
         }
 
         private void CanExecuteRemovePiece(object sender, CanExecuteRoutedEventArgs e)
@@ -141,7 +141,7 @@ namespace Mylly
         {
             peli.Siirra();
         }
-        
+
 
         private void Window_PelipisteClick(object sender, RoutedEventArgs e)
         {
@@ -159,13 +159,20 @@ namespace Mylly
             }
             else if (peli.tila == Pelitila.Siirra)
             {
+                if (peli.valittuNappula == null)
+                    return;
+
+                int x = 0;
+                int y = 0;
+                PeliKoordToUIKoords(peli.valittuNappula.Paikka, out x, out y);
+                PelilautaNamespace.Pelialue pelialue = pelilautaalue.AnnaPelialue(x, y);
                 var args = (PelilautaNamespace.PelilautaController.PelipisteClickEventArgs)e;
 
                 Nappula siirretty = peli.setTargetKoord(UIKoordsToPeliKoord(args.X, args.Y));
 
                 if (siirretty != null)
                 {
-                    UusiNappula(args.Alue, siirretty);
+                    pelialue.SiirraNappula(args.Alue);
                 }
                 else
                 {
@@ -176,7 +183,7 @@ namespace Mylly
 
         private void Window_PelinappulaClick(object sender, RoutedEventArgs e)
         {
-            var args = (PelilautaNamespace.PelilautaController.PelinappulaClickEventArgs)e;
+            var args = (PelilautaNamespace.Pelialue.PelinappulaClickEventArgs)e;
             Nappula valinta = peli.NappulaPaikassa(UIKoordsToPeliKoord(args.X, args.Y));
             peli.ValitseNappula(valinta);
         }
@@ -184,10 +191,8 @@ namespace Mylly
         private void UusiNappula(PelilautaNamespace.Pelialue alue, Nappula uusi)
         {
             PelinappulaNamespace.PeliNappula nappula = new PelinappulaNamespace.PeliNappula(uusi, color);
-            alue.Children.Add(nappula);
-            nappula.UpdateLayout();
-            Canvas.SetLeft(nappula, alue.PuolikasLeveys - (nappula.ActualWidth / 2));
-            Canvas.SetTop(nappula, alue.PuolikasKorkeus - (nappula.ActualHeight / 2));
+            alue.lisaaNappula(nappula);
+
         }
 
         private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

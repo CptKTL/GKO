@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PelilautaNamespace"
              
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300" >
     <UserControl.Resources>
         <Style x:Key="VaakaViiva" TargetType="Line" >
             <Style.Setters>

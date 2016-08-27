@@ -7,9 +7,9 @@
              x:Name="control"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" HorizontalAlignment="Center" VerticalAlignment="Center" 
-              
+             MouseLeftButtonUp="control_MouseLeftButtonUp"
              DataContext="{RelativeSource Self}">
-    <!--MouseLeftButtonUp="control_MouseLeftButtonUp"-->
+    
     <UserControl.Resources>
         <Style TargetType="Ellipse">
             <Style.Setters>

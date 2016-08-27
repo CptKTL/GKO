@@ -5,14 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mylly"
         xmlns:lauta="clr-namespace:PelilautaNamespace;assembly=Pelilauta"
-        xmlns:pelinappula="clr-namespace:PelinappulaNamespace;assembly=PeliNappula"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="860" MinHeight="480" MinWidth="680"
 lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
-        lauta:PelilautaController.PelinappulaClick="Window_PelinappulaClick"
+        lauta:Pelialue.PelinappulaClick="Window_PelinappulaClick"
         
         MouseLeftButtonUp="Window_MouseLeftButtonUp">
-    
+    <!--xmlns:pelinappula="clr-namespace:PelinappulaNamespace;assembly=PeliNappula"-->
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:MainWindow.AboutCommand}" Executed="CommandBindingAbout_Executed"></CommandBinding>
         <CommandBinding Command="{x:Static local:MainWindow.InsertPiece}" CanExecute="CanExecuteInsertPiece" Executed="ExecutedInsertPiece"></CommandBinding>
@@ -43,6 +42,6 @@ lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
 
         </Menu>
         <TextBlock Name="Tuloste" DockPanel.Dock="Bottom" ></TextBlock>
-        <lauta:PelilautaController Name="pelilauta"></lauta:PelilautaController>
+        <lauta:PelilautaController Name="pelilautaalue"></lauta:PelilautaController>
     </DockPanel>
 </Window>

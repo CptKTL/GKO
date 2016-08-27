@@ -82,8 +82,11 @@ namespace MyllyPeliNamespace
 
             tila = Pelitila.Odota;
             if (lauta.Siirra(valittuNappula, _targetKoord))
-                            return valittuNappula;
-
+            {
+                var temp = valittuNappula;
+                ValitseNappula(null);
+                return temp;
+            }
 
             return null;
         }
@@ -101,6 +104,11 @@ namespace MyllyPeliNamespace
 
         public void ValitseNappula(Nappula valinta)
         {
+            if (tila != Pelitila.Odota)
+            {
+                tila = Pelitila.Odota;
+                return;
+            }
             if (valinta == valittuNappula && valittuNappula != null)
             {
                 valittuNappula.Valittu = !valittuNappula.Valittu;

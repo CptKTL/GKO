@@ -61,7 +61,7 @@ namespace PelinappulaNamespace
             this.nappula = nappula;
 
             nappula.ValittuChangedHandler += NappulaValittu;
-            nappula.ValittuPoistettuHandler += NappulaPoistettu;
+           // nappula.ValittuPoistettuHandler += NappulaPoistettu;
             //nappula.ValittuSiirrettyHandler += NappulaSiirretty;
             //Loaded += Load;
 
@@ -90,10 +90,10 @@ namespace PelinappulaNamespace
         //    Canvas.SetTop(this, parent.PuolikasKorkeus - ActualHeight / 2);
         //}
 
-        private void NappulaPoistettu(object sender, EventArgs e)
-        {
-            ((Panel)Parent).Children.Remove(this);
-        }
+        //private void NappulaPoistettu(object sender, EventArgs e)
+        //{
+        //    ((Panel)Parent).Children.Remove(this);
+        //}
 
         private void NappulaValittu(object sender, EventArgs e)
         {
@@ -106,12 +106,10 @@ namespace PelinappulaNamespace
             }
         }
 
-        //        //private void control_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        //        //{
-        //        //    RaisePelipisteClickEvent(parent.getXIndex(), parent.getYIndex(), parent);
-
-        //        //    e.Handled = true;
-        //        //}
+        private void control_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = false;
+        }
 
 
         //        public delegate void PelinappulaClickEventHandler(object sender, PelinappulaClickEventArgs e);
