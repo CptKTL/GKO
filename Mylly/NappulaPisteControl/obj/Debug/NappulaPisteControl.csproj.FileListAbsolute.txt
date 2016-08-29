@@ -1,2 +1,0 @@
-D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\NappulaPisteControl\obj\Debug\NappulaPisteControl.csprojResolveAssemblyReference.cache
-D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\NappulaPisteControl\obj\Debug\NappulaPisteControl_MarkupCompile.cache

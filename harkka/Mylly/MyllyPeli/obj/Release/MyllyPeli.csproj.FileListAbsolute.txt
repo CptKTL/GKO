@@ -1,0 +1,5 @@
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\MyllyPeli\bin\Release\MyllyPeli.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\MyllyPeli\bin\Release\MyllyPeli.pdb
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\MyllyPeli\obj\Release\MyllyPeli.csprojResolveAssemblyReference.cache
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\MyllyPeli\obj\Release\MyllyPeli.dll
+D:\Koodi\CSharp\Käyttöliittymäohjelmointi\GKO\Mylly\MyllyPeli\obj\Release\MyllyPeli.pdb
