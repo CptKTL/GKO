@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PelilautaNamespace"
-             
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" >
     <UserControl.Resources>
@@ -74,13 +73,9 @@
             </Style.Setters>
         </Style>
         <Style x:Key="NappulaPiste" TargetType="{x:Type Ellipse}">
-
             <Style.Setters>
                 <Setter Property="Canvas.Top" Value="{Binding ElementName=PerusAlue, Path=PuolikasKorkeus}"/>
-
                 <Setter Property="Canvas.Left" Value="{Binding ElementName=PerusAlue, Path=PuolikasLeveys}"/>
-                <!--<Setter Property="VerticalAlignment" Value="Center"></Setter>
-                <Setter Property="HorizontalAlignment" Value="Center"></Setter>-->
                 <Setter Property="Fill" Value="Black"/>
                 <Setter Property="Width" Value="20"/>
                 <Setter Property="Height" Value="20"/>
@@ -88,27 +83,8 @@
             </Style.Setters>
         </Style>
 
-
     </UserControl.Resources>
     <UniformGrid Name="lauta" Rows="7" Columns="7" >
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>-->
         <local:Pelialue x:Name="PerusAlue" >
             <Line Style="{StaticResource PuolikasVaakaViivaOikea}"/>
             <Line Style="{StaticResource PuolikasPystyViivaAla}"/>
@@ -453,160 +429,5 @@
                 </Ellipse.RenderTransform>
             </Ellipse>
         </local:Pelialue>
-
-
-        <!--<local:Pelialue  Grid.Row="0" Grid.Column="2" >
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="0" Grid.Column="0">
-            <Line Style="{StaticResource PuolikasVaakaViivaOikea}" />
-        </local:Pelialue>
-        <local:Pelialue Grid.Row="0" Grid.Column="1" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="0" Grid.Column="2" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="0" Grid.Column="3" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="0" Grid.Column="4" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="0" Grid.Column="5" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="0" Grid.Column="6">
-            <Line Style="{StaticResource PuolikasVaakaViivaVasen}" />
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="3" Grid.Column="0">
-            <Line Style="{StaticResource PuolikasVaakaViivaOikea}" />
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="1" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="2">
-            <Line Style="{StaticResource PuolikasVaakaViivaVasen}" />
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="4">
-            <Line Style="{StaticResource PuolikasVaakaViivaOikea}" />
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="5" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="6">
-            <Line Style="{StaticResource PuolikasVaakaViivaVasen}" />
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="6" Grid.Column="1">
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="6" Grid.Column="2" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="6" Grid.Column="3" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="6" Grid.Column="4" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="6" Grid.Column="5" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="1" Grid.Column="0" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="2" Grid.Column="0" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="0" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="4" Grid.Column="0" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="5" Grid.Column="0" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="1" Grid.Column="3" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="5" Grid.Column="3" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="1" Grid.Column="6" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="2" Grid.Column="6" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="6" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="4" Grid.Column="6" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="5" Grid.Column="6" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="1" Grid.Column="2" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="1" Grid.Column="3" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="1" Grid.Column="4" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        
-        <local:Pelialue  Grid.Row="5" Grid.Column="2" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="5" Grid.Column="3" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="5" Grid.Column="4" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="2" Grid.Column="1" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="1" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="4" Grid.Column="1" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="2" Grid.Column="5" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="5" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="4" Grid.Column="5" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="3" Grid.Column="2" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="3" Grid.Column="4" >
-            <Line Style="{StaticResource PystyViiva}"/>
-        </local:Pelialue>
-
-        <local:Pelialue  Grid.Row="2" Grid.Column="3" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>
-        <local:Pelialue  Grid.Row="4" Grid.Column="3" >
-            <Line Style="{StaticResource VaakaViiva}"/>
-        </local:Pelialue>-->
-
-
     </UniformGrid>
 </UserControl>

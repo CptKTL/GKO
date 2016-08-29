@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mylly"
         mc:Ignorable="d"
-        Title="HelpWindow" Height="300" Width="300" MinHeight="300" MinWidth="300">
-    <StackPanel> 
-        <Label Content="Pelaa myllypeliä jos osaat."></Label>
+        Title="Help" Height="300" Width="300" MinHeight="300" MinWidth="300">
+    <StackPanel >
+        <TextBlock IsEnabled="False" Margin="10,10,10,10" ScrollViewer.HorizontalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow" 
+                 Text="Mylly-Peli. Tällä ohjelmalla voi leikkiä pelaavansa Myllyä. Pelilaudan ympyröihin voi asetella pelinappuloita 'Insert Piece' -toiminnolla. Nappuloita voi valita klikkaamalla niitä. Uusien nappuloiden väriä voi muuttaa Tools->Settings valikosta. Nappuloita voi poistaa valitsemalla nappulan ja painamalla sitten 'Remove Piece'. Nappuloita voi siirtää viereisiin ruutuihin valitsemalla nappulan, painamalla 'Move Piece' ja valitsemalla nappulan vieressä olevan ympyrän.">
+        </TextBlock>
     </StackPanel>
 </Window>

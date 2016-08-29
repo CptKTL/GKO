@@ -7,11 +7,10 @@
         xmlns:lauta="clr-namespace:PelilautaNamespace;assembly=Pelilauta"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="860" MinHeight="480" MinWidth="680"
-lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
+        lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
         lauta:Pelialue.PelinappulaClick="Window_PelinappulaClick"
-        
         MouseLeftButtonUp="Window_MouseLeftButtonUp">
-    <!--xmlns:pelinappula="clr-namespace:PelinappulaNamespace;assembly=PeliNappula"-->
+    
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:MainWindow.AboutCommand}" Executed="CommandBindingAbout_Executed"></CommandBinding>
         <CommandBinding Command="{x:Static local:MainWindow.InsertPiece}" CanExecute="CanExecuteInsertPiece" Executed="ExecutedInsertPiece"></CommandBinding>
@@ -19,28 +18,32 @@ lauta:PelilautaController.PelipisteClick="Window_PelipisteClick"
         <CommandBinding Command="{x:Static local:MainWindow.RemovePiece}" CanExecute="CanExecuteRemovePiece" Executed="ExecutedRemovePiece"></CommandBinding>
         <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBindingHelp_Executed"   ></CommandBinding>
         <CommandBinding x:Name="asdf" Command="{x:Static local:MainWindow.SettingsCommand}" Executed="CommandBindingSettings_Executed"   ></CommandBinding>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBindingClose_Executed"></CommandBinding>
     </Window.CommandBindings>
-    
-    <DockPanel LastChildFill="True">
+
+    <DockPanel Name="Juuri" LastChildFill="True">
         <Menu IsMainMenu="True" DockPanel.Dock="Top">
-            <MenuItem Header="_File"></MenuItem>
+            <MenuItem Header="_File">
+                <MenuItem Command="ApplicationCommands.Close"></MenuItem>
+            </MenuItem>
             <MenuItem Header="_Game">
                 <MenuItem Header="_Insert Piece"  Command="{x:Static local:MainWindow.InsertPiece}"></MenuItem>
                 <MenuItem Header="_Move Piece" Command="{x:Static local:MainWindow.MovePiece}"/>
                 <MenuItem Header="_Remove Piece" Command="{x:Static local:MainWindow.RemovePiece}"/>
-                
             </MenuItem>
             <MenuItem Header="Tools">
                 <MenuItem Header="_Settings..." Command="{x:Static local:MainWindow.SettingsCommand}"></MenuItem>
             </MenuItem>
-            
             <MenuItem Header="_Help">
-                        <MenuItem Command="ApplicationCommands.Help"></MenuItem>
+                <MenuItem Command="ApplicationCommands.Help"></MenuItem>
                 <MenuItem Header="About" Command="{x:Static local:MainWindow.AboutCommand}"/>
-
             </MenuItem>
-
         </Menu>
+        <StackPanel DockPanel.Dock="Right" Name="painikkeet">
+            <Button Margin="5,2,5,2" Content="_Insert Piece" Command="{x:Static local:MainWindow.InsertPiece}"></Button>
+            <Button Margin="5,2,5,2" Content="_Move Piece" Command="{x:Static local:MainWindow.MovePiece}"></Button>
+            <Button Margin="5,2,5,2" Content="_Remove Piece" Command="{x:Static local:MainWindow.RemovePiece}"></Button>
+        </StackPanel>
         <TextBlock Name="Tuloste" DockPanel.Dock="Bottom" ></TextBlock>
         <lauta:PelilautaController Name="pelilautaalue"></lauta:PelilautaController>
     </DockPanel>

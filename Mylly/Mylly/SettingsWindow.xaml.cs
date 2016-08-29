@@ -26,6 +26,12 @@ namespace Mylly
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// avaa uuden ColorDialogin josta voi valita värin.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Vari_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.ColorDialog colorDialog =
@@ -38,6 +44,17 @@ namespace Mylly
             color.B = colorDialog.Color.B;
             color.G = colorDialog.Color.G;
             color.R = colorDialog.Color.R;
+        }
+
+
+        /// <summary>
+        /// Close Command. Sulkee ikkunan.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CommandBindingClose_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

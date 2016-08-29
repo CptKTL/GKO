@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mylly"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="300" Width="300">
-    <StackPanel>
-        <Button Content="Valitse väri" Click="Vari_Click"></Button>
-    </StackPanel>
+        Title="Settings" Height="200" Width="200" MinHeight="100" MinWidth="100" MaxHeight="200" MaxWidth="200">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBindingClose_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="10,10,10,10" Content="Valitse väri" Click="Vari_Click"></Button>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Height="30" Margin="10,10,10,10" Content="Sulje" Command="ApplicationCommands.Close"></Button>
+    </Grid>
 </Window>
